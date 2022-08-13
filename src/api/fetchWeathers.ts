@@ -59,5 +59,8 @@ export const fetchWeathers = async () => {
     return weatherData;
 };
 
+// Refetches every 5mins
 export const useFetchWeather = () =>
-    useQuery(["weathers"], () => fetchWeathers());
+    useQuery(["weathers"], () => fetchWeathers(), {
+        refetchInterval: 1000 * 60 * 5,
+    });
