@@ -54,6 +54,7 @@
         ],
         "no-await-in-loop": 0,
         "react/require-default-props": 0,
-        "@emotion/jsx-import": "error"
+        "@emotion/jsx-import": "error",
+        "no-console": 0
     }
 }
