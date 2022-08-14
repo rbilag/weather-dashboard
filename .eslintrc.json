@@ -9,6 +9,7 @@
         "airbnb",
         "airbnb/hooks",
         "plugin:import/typescript",
+        "plugin:storybook/recommended",
         "prettier"
     ],
     "parser": "@typescript-eslint/parser",
@@ -27,8 +28,12 @@
                 "devDependencies": [
                     "**/setupTests.ts",
                     "**/*.test.ts",
-                    "**/*.test.tsx"
-                ]
+                    "**/*.test.tsx",
+                    "**/*.stories.*",
+                    "**/.storybook/**/*.*",
+                    "**/mocks/*.*"
+                ],
+                "peerDependencies": true
             }
         ],
         "react/jsx-filename-extension": [
@@ -47,6 +52,7 @@
                 "tsx": "never"
             }
         ],
-        "no-await-in-loop": 0
+        "no-await-in-loop": 0,
+        "react/require-default-props": 0
     }
 }
