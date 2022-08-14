@@ -4,10 +4,11 @@ import {
     IP_BASE_ENDPOINT,
     WEATHER_BASE_ENDPOINT,
 } from "../data/constants";
+import { WeatherData } from "../data/types";
 
-export const fetchWeathers = async () => {
+const fetchWeather = async () => {
     const cityParams = new URLSearchParams(window.location.search).get("city");
-    const weatherData: any = [];
+    const weatherData: WeatherData[] = [];
 
     const getWeatherFromCoord = async (
         name: string,
@@ -16,11 +17,21 @@ export const fetchWeathers = async () => {
     ) => {
         try {
             const weatherResp = await fetch(
-                `${WEATHER_BASE_ENDPOINT}/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+                `${WEATHER_BASE_ENDPOINT}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
             );
             const data = await weatherResp.json();
             if (data) {
-                weatherData.push({ ...data, name });
+                const simplifiedData: WeatherData = {
+                    name,
+                    weather: {
+                        iconId: data.weather[0].id,
+                        desc: data.weather[0].description,
+                    },
+                    temp: data.main.temp,
+                    humidity: data.main.humidity,
+                    windSpeed: data.wind.speed,
+                };
+                weatherData.push(simplifiedData);
             }
         } catch (error) {
             console.log(error);
@@ -35,7 +46,6 @@ export const fetchWeathers = async () => {
                 `${GEO_BASE_ENDPOINT}/direct?q=${city}&limit=1&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
             );
             const [cityCoords] = await geoResp.json();
-            console.log(cityCoords);
             if (cityCoords)
                 await getWeatherFromCoord(
                     cityCoords.name,
@@ -43,24 +53,21 @@ export const fetchWeathers = async () => {
                     cityCoords.lon
                 );
         }
-        console.log(weatherData);
         return weatherData;
     }
     const ipResp = await fetch(`${IP_BASE_ENDPOINT}/`);
     const cityCoords = await ipResp.json();
-    console.log(cityCoords);
     if (cityCoords)
         await getWeatherFromCoord(
             cityCoords.city,
             cityCoords.latitude,
             cityCoords.longitude
         );
-    console.log(weatherData);
     return weatherData;
 };
 
 // Refetches every 5mins
-export const useFetchWeather = () =>
-    useQuery(["weathers"], () => fetchWeathers(), {
+export default () =>
+    useQuery(["weathers"], () => fetchWeather(), {
         refetchInterval: 1000 * 60 * 5,
     });

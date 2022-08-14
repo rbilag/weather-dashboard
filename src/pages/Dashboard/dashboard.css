@@ -1,0 +1,11 @@
+.weather-dashboard {
+    width: 100vw;
+    background-size: cover;
+    background-position: 100% 100%;
+    background-blend-mode: soft-light;
+    display: inline-grid;
+    grid-template-columns: 2fr 3fr;
+}
+.weather-data {
+    grid-column: 1;
+}

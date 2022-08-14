@@ -3,4 +3,7 @@ body {
     font-family: league-gothic, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #041c32;
 }
