@@ -1,0 +1,21 @@
+.data-grid {
+    height: 100vh;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.data-grid-footer {
+    display: flex;
+    flex-direction: row;
+}
+.data-grid-footer > div {
+    flex-grow: 1;
+}
+hr {
+    width: 100%;
+    border: none;
+    border-top: 3px solid rgba(255, 255, 255, 0.25);
+}
