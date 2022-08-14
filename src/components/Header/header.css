@@ -1,9 +1,0 @@
-header {
-    display: flex;
-    justify-content: flex-end;
-}
-.city-name {
-    color: white;
-    font-size: calc(24px + 5vmin);
-    padding: 8rem 10rem;
-}

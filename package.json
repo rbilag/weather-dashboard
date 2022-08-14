@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@emotion/react": "^11.10.0",
         "@tanstack/react-query": "^4.1.0",
         "@tanstack/react-query-devtools": "^4.0.10",
         "@testing-library/jest-dom": "^5.16.5",
@@ -14,6 +15,7 @@
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
+        "@emotion/eslint-plugin": "^11.10.0",
         "@storybook/addon-a11y": "^6.5.10",
         "@storybook/addon-actions": "^6.5.10",
         "@storybook/addon-essentials": "^6.5.10",
@@ -32,7 +34,7 @@
         "@typescript-eslint/eslint-plugin": "^5.33.0",
         "@typescript-eslint/parser": "^5.33.0",
         "babel-plugin-named-exports-order": "^0.0.2",
-        "eslint": "^8.21.0",
+        "eslint": "^8.22.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-import": "^2.26.0",

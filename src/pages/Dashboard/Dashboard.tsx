@@ -1,9 +1,36 @@
-import React, { useEffect, useState } from "react";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import React, { useEffect, useMemo, useState } from "react";
+import { jsx, css } from "@emotion/react";
 import useFetchWeather from "../../hooks/useFetchWeather";
 import background from "../../assets/background.jpg";
 import Header from "../../components/Header/Header";
 import DataGrid from "../../components/DataGrid/DataGrid";
-import "./dashboard.css";
+
+const plainDashboard = css({
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "#041c32",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "& p": {
+        margin: 0,
+        color: "white",
+        fontSize: "calc(48px + 5vmin)",
+    },
+});
+
+const weatherDashboard = css({
+    width: "100vw",
+    backgroundSize: "cover",
+    backgroundPosition: "100% 100%",
+    display: "inline-grid",
+    gridTemplateColumns: "2fr 3fr",
+    "& .weather-data": {
+        gridColumn: 1,
+    },
+});
 
 function Dashboard() {
     const { status, data } = useFetchWeather();
@@ -26,23 +53,35 @@ function Dashboard() {
         };
     }, [data]);
 
-    return (
-        <>
-            {status === "error" && <p>Error fetching data</p>}
-            {status === "loading" && <p>Fetching data...</p>}
-            {status === "success" && data && (
+    const content = useMemo(() => {
+        if (status === "error")
+            return (
+                <div css={plainDashboard}>
+                    <p>Error fetching data</p>
+                </div>
+            );
+        if (status === "success" && data)
+            return (
                 <div
-                    className="weather-dashboard"
-                    style={{ backgroundImage: `url(${background})` }}
+                    css={[
+                        weatherDashboard,
+                        { backgroundImage: `url(${background})` },
+                    ]}
                 >
                     <div className="weather-data">
                         <DataGrid data={data[showIndex]} />
                     </div>
                     <Header city={data[showIndex].name} />
                 </div>
-            )}
-        </>
-    );
+            );
+        return (
+            <div css={plainDashboard}>
+                <p>Fetching data...</p>
+            </div>
+        );
+    }, [data, showIndex, status]);
+
+    return content;
 }
 
 export default Dashboard;
