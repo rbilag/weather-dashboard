@@ -23,6 +23,11 @@ const plainDashboard = css({
         color: "white",
         fontSize: "10rem",
     },
+    "@media(max-width: 800px)": {
+        "& p": {
+            fontSize: "5rem",
+        },
+    },
 });
 
 const weatherDashboard = css({
