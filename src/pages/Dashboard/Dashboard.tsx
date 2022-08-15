@@ -17,7 +17,7 @@ const plainDashboard = css({
     "& p": {
         margin: 0,
         color: "white",
-        fontSize: "calc(48px + 5vmin)",
+        fontSize: "10rem",
     },
 });
 
@@ -29,6 +29,12 @@ const weatherDashboard = css({
     gridTemplateColumns: "2fr 3fr",
     "& .weather-data": {
         gridColumn: 1,
+    },
+    "@media(max-width: 1920px)": {
+        gridTemplateColumns: "3fr 2fr",
+    },
+    "@media(max-width: 800px)": {
+        gridTemplateColumns: "1fr",
     },
 });
 

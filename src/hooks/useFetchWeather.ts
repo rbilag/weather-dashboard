@@ -27,9 +27,9 @@ const fetchWeather = async () => {
                         iconId: data.weather[0].id,
                         desc: data.weather[0].description,
                     },
-                    temp: data.main.temp,
-                    humidity: data.main.humidity,
-                    windSpeed: data.wind.speed,
+                    temp: Math.round(data.main.temp),
+                    humidity: Math.round(data.main.humidity),
+                    windSpeed: Math.round(data.wind.speed),
                 };
                 weatherData.push(simplifiedData);
             }

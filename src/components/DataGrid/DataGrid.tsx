@@ -21,6 +21,9 @@ const dataGridFooter = css({
     "& > div": {
         flexGrow: 1,
     },
+    "@media(max-width: 420px)": {
+        flexDirection: "column",
+    },
 });
 const dataGridDivider = css({
     width: "100%",
