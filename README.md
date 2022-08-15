@@ -1,4 +1,5 @@
 <a name="readme-top"></a>
+
 <div align="center">
 <h3 align="center">Weather Dashboard</h3>
 
@@ -98,14 +99,17 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 
 **Get Current Location's Weather**
+
 <p>Simply open the application normally (without any additional url query parameters). The user's location is captured by default.</p>
 
 **Get A Specific City's Weather**
+
 <p>
 Append <code>/?city=cityName</code> to url(e.g. <code>/?city=Paris</code>). Please note that the parameter has to be a city name. If the name entered isn't found, the weather from the user's current location is displayed instead.
 </p>
 
 **Get Multiple City's Weather**
+
 <p>
 Append <code>/?city=cityName,cityName,cityName,...</code> to url(<code>/?city=Paris,Barcelona,Toronto</code>). Please note that the parameters have to be valid city names. If a specific city name isn't found, it won't be added to the weather cycle that will be displayed. If none of the inputted cities were found, the weather from the user's current location is displayed instead.
 </p>
