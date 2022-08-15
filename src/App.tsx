@@ -1,10 +1,16 @@
 import React from "react";
-import Dashboard from "./pages/Dashboard/Dashboard";
+
+const dashboardPromise = import(
+    /* webpackChunkName: 'Dashboard' */ "./pages/Dashboard/Dashboard"
+);
+const Dashboard = React.lazy(() => dashboardPromise);
 
 function App() {
     return (
         <div className="App">
-            <Dashboard />
+            <React.Suspense fallback={null}>
+                <Dashboard />
+            </React.Suspense>
         </div>
     );
 }

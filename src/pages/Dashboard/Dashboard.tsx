@@ -5,7 +5,11 @@ import { jsx, css } from "@emotion/react";
 import useFetchWeather from "../../hooks/useFetchWeather";
 import background from "../../assets/background.jpg";
 import Header from "../../components/Header/Header";
-import DataGrid from "../../components/DataGrid/DataGrid";
+
+const dataGridPromise = import(
+    /* webpackChunkName: 'DataGrid' */ "../../components/DataGrid/DataGrid"
+);
+const DataGrid = React.lazy(() => dataGridPromise);
 
 const plainDashboard = css({
     width: "100vw",
@@ -75,7 +79,9 @@ function Dashboard() {
                     ]}
                 >
                     <div className="weather-data">
-                        <DataGrid data={data[showIndex]} />
+                        <React.Suspense fallback={null}>
+                            <DataGrid data={data[showIndex]} />
+                        </React.Suspense>
                     </div>
                     <Header city={data[showIndex].name} />
                 </div>
