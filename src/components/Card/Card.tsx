@@ -40,7 +40,7 @@ const largeCard = css(baseCard, {
     },
     "& .card-text": {
         textTransform: "lowercase",
-        fontFamily: "league-gothic-condensed, sans-serif",
+        fontFamily: "League Gothic Condensed, sans-serif",
     },
 });
 

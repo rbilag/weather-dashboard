@@ -1,6 +1,25 @@
+@font-face {
+    font-family: "League Gothic";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("LeagueGothic Regular"), local("LeagueGothic-Regular"),
+        url("./assets/League-Gothic/LeagueGothic-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "League Gothic Condensed";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("LeagueGothic Condensed Regular"),
+        local("LeagueGothic-CondensedRegular"),
+        url("./assets/League-Gothic/LeagueGothic-CondensedRegular.woff")
+            format("woff");
+}
+
 body {
     margin: 0;
-    font-family: league-gothic, sans-serif;
+    font-family: "League Gothic", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
