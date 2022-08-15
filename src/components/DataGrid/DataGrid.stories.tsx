@@ -11,7 +11,7 @@ export default {
         (story) => (
             <div
                 style={{
-                    maxWidth: "50rem",
+                    maxWidth: "68rem",
                     backgroundImage: `url(${background})`,
                     backgroundPosition: "0% 100% ",
                 }}

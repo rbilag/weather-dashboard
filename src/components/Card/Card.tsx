@@ -57,25 +57,43 @@ const mediumCard = css(baseCard, {
     fontSize: "20rem",
     padding: "1rem",
     "& .card-icon": {
-        fontSize: "20rem",
+        fontSize: "14rem",
     },
     "@media(max-width: 1920px)": {
         fontSize: "15rem",
+        "& .card-icon": {
+            fontSize: "9rem",
+        },
     },
     "@media(max-width: 965px)": {
         fontSize: "10rem",
+        "& .card-icon": {
+            fontSize: "4rem",
+        },
     },
     "@media(max-width: 800px)": {
         fontSize: "15rem",
+        "& .card-icon": {
+            fontSize: "9rem",
+        },
     },
     "@media(max-width: 625px)": {
         fontSize: "13rem",
+        "& .card-icon": {
+            fontSize: "7rem",
+        },
     },
     "@media(max-width: 420px)": {
         fontSize: "8rem",
+        "& .card-icon": {
+            fontSize: "2rem",
+        },
     },
     "@media(max-width: 376px)": {
         fontSize: "6rem",
+        "& .card-icon": {
+            fontSize: "1rem",
+        },
     },
 });
 const largeCard = css(baseCard, {

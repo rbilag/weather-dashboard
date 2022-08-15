@@ -10,8 +10,9 @@ export default {
         (story) => (
             <div
                 style={{
-                    maxWidth: "35rem",
+                    maxWidth: "45rem",
                     backgroundColor: `rgba(${COLORS.FREEZING.r}, ${COLORS.FREEZING.g}, ${COLORS.FREEZING.b}, 1)`,
+                    padding: "2rem",
                 }}
             >
                 {story()}
