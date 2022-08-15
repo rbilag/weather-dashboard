@@ -1,46 +1,141 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
+<div align="center">
+<h3 align="center">Weather Dashboard</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    Dashboard that shows current weather, temperature, humidity, and wind speed.
+  </p>
+</div>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#technologies-used">Technologies Used</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Weather Dashboard Screenshot][product-screenshot]]
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p>
+    Dashboard that shows current weather, temperature, humidity, and wind speed of your current location. To see weather at other cities, append <code>/?city=cityName</code> to url(e.g. <code>/?city=Paris</code>). You can also query for multiple cities (<code>/?city=Paris,Barcelona,Toronto</code>). Dashboard will then cycle between each city for 5 seconds each.
+  </p>
+  <p>
+    Current location data was fetched using IP API while weather data was fetched from Open Weather Map API.
+  </p>
 
-### `npm test`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technologies Used
 
-### `npm run build`
+-   [React.js][react-url]
+-   [Typescript][typescript-url]
+-   [Emotion][emotion-url]
+-   [Storybook][storybook-url]
+-   [Tanstack Query][tanstack-query-url]
+-   [Jest][jest-url]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- GETTING STARTED -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+To get a local copy up and running follow these simple steps.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This is an example of how to list things you need to use the software and how to install them.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-   npm
+    ```sh
+    npm install npm@latest -g
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. Get a free Open Weather Map API Key at [https://openweathermap.org/api](https://openweathermap.org/api)
+2. Clone the repo
+    ```sh
+    git clone https://github.com/crookedfingerworks/weather-dashboard.git
+    ```
+3. Install NPM packages
+    ```sh
+    npm install
+    ```
+4. Create .env file and add API key
+    ```sh
+    REACT_APP_WEATHER_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    ```
+5. Start the application
+    ```sh
+    npm start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+**Get Current Location's Weather**
+<p>Simply open the application normally (without any additional url query parameters). The user's location is captured by default.</p>
+
+**Get A Specific City's Weather**
+<p>
+Append <code>/?city=cityName</code> to url(e.g. <code>/?city=Paris</code>). Please note that the parameter has to be a city name. If the name entered isn't found, the weather from the user's current location is displayed instead.
+</p>
+
+**Get Multiple City's Weather**
+<p>
+Append <code>/?city=cityName,cityName,cityName,...</code> to url(<code>/?city=Paris,Barcelona,Toronto</code>). Please note that the parameters have to be valid city names. If a specific city name isn't found, it won't be added to the weather cycle that will be displayed. If none of the inputted cities were found, the weather from the user's current location is displayed instead.
+</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+crooked.finger.works@gmail.com
+
+Project Link: [https://github.com/crookedfingerworks/weather-dashboard](https://github.com/crookedfingerworks/weather-dashboard)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[product-screenshot]: screenshot.jpg
+[react-url]: https://reactjs.org/
+[typescript-url]: https://www.typescriptlang.org/
+[emotion-url]: https://emotion.sh/docs/introduction
+[storybook-url]: https://storybook.js.org/
+[tanstack-query-url]: https://tanstack.com/query/v4
+[jest-url]: https://jestjs.io/
