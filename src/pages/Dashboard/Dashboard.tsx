@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { jsx, css } from "@emotion/react";
 import useFetchWeather from "../../hooks/useFetchWeather";
-import background from "../../assets/background.jpg";
+import background from "../../assets/background.webp";
 import Header from "../../components/Header/Header";
 
 const dataGridPromise = import(
