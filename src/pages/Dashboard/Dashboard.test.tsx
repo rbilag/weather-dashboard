@@ -19,13 +19,19 @@ describe("<Dashboard />", () => {
             await screen.findByText(mockWeatherResponse.weather[0].description)
         ).toBeInTheDocument();
         expect(
-            await screen.findByText(`${mockWeatherResponse.main.temp}\u00B0`)
+            await screen.findByText(
+                `${Math.round(mockWeatherResponse.main.temp)}\u00B0`
+            )
         ).toBeInTheDocument();
         expect(
-            await screen.findByText(`${mockWeatherResponse.main.humidity}%`)
+            await screen.findByText(
+                `${Math.round(mockWeatherResponse.main.humidity)}%`
+            )
         ).toBeInTheDocument();
         expect(
-            await screen.findByText(`${mockWeatherResponse.wind.speed} km/h`)
+            await screen.findByText(
+                `${Math.round(mockWeatherResponse.wind.speed)} km/h`
+            )
         ).toBeInTheDocument();
     });
 
@@ -52,13 +58,19 @@ describe("<Dashboard />", () => {
             await screen.findByText(mockWeatherResponse.weather[0].description)
         ).toBeInTheDocument();
         expect(
-            await screen.findByText(`${mockWeatherResponse.main.temp}\u00B0`)
+            await screen.findByText(
+                `${Math.round(mockWeatherResponse.main.temp)}\u00B0`
+            )
         ).toBeInTheDocument();
         expect(
-            await screen.findByText(`${mockWeatherResponse.main.humidity}%`)
+            await screen.findByText(
+                `${Math.round(mockWeatherResponse.main.humidity)}%`
+            )
         ).toBeInTheDocument();
         expect(
-            await screen.findByText(`${mockWeatherResponse.wind.speed} km/h`)
+            await screen.findByText(
+                `${Math.round(mockWeatherResponse.wind.speed)} km/h`
+            )
         ).toBeInTheDocument();
     });
 });
