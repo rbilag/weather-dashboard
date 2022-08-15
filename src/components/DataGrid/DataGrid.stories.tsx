@@ -2,7 +2,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import DataGrid from "./DataGrid";
-import background from "../../assets/background.jpg";
+import background from "../../assets/background.webp";
 
 export default {
     title: "DataGrid",

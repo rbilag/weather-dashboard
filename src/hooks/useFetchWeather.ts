@@ -53,7 +53,7 @@ const fetchWeather = async () => {
                     cityCoords.lon
                 );
         }
-        return weatherData;
+        if (weatherData.length > 0) return weatherData;
     }
     const ipResp = await fetch(`${IP_BASE_ENDPOINT}/`);
     const cityCoords = await ipResp.json();
